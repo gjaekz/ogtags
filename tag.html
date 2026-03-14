@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tag Details â€” 4L Tags</title>
+<title>Tag Details — 4L Tags</title>
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,7 +97,7 @@ const RARITY_CONFIG = {
   "Ultra Rare": {
     color: "#ff3cac",
     glow: "rgba(255,60,172,0.2)",
-    desc: "Ultra Rare tags contain zero vowels â€” the most sought-after tier. Pure consonant combinations are extremely difficult to find and highly desirable.",
+    desc: "Ultra Rare tags contain zero vowels — the most sought-after tier. Pure consonant combinations are extremely difficult to find and highly desirable.",
     rules: ["No vowels (A E I O U)", "All consonants", "Maximum desirability"]
   },
   "Rare": {
@@ -172,7 +172,7 @@ function render() {
   const vowels = getVowelCount(tag);
   const uniqueChars = new Set(tag.toLowerCase()).size;
   const inventoryLabel = category || '4L Tags';
-  const metaLine = category ? `${tag.length} characters Â· ${category}` : `${tag.length} characters Â· Xbox Gamertag`;
+  const metaLine = category ? `${tag.length} characters · ${category}` : `${tag.length} characters · Xbox Gamertag`;
   const infoTitle = category ? `${category} Listing` : rarity;
   const infoDesc = category
     ? `${upper} is currently listed in the ${category} marketplace. Pricing is communicated directly to the buyer by the seller after contact is made.`
@@ -180,7 +180,7 @@ function render() {
   // Apply CSS vars
   document.documentElement.style.setProperty('--rarity-color', cfg.color);
   document.documentElement.style.setProperty('--rarity-glow', cfg.glow);
-  document.title = upper + ' â€” ' + inventoryLabel;
+  document.title = upper + ' — ' + inventoryLabel;
 
   // Build tiers list
   const tiersHTML = TIERS.map(t => {
@@ -218,7 +218,7 @@ function render() {
       <span class="rarity-badge">${category || rarity}</span>
       <div class="tag-title">${upper}</div>
       <div class="tag-length">${metaLine}</div>
-      <button class="copy-btn" id="copyBtn" onclick="copyTag()">â§‰ Copy Tag</button>
+      <button class="copy-btn" id="copyBtn" onclick="copyTag()">⧉ Copy Tag</button>
     </div>
 
     <div class="stats-row">
@@ -264,11 +264,11 @@ function copyTag() {
     document.body.removeChild(ta);
   });
 
-  btn.textContent = 'âœ“ Copied!';
+  btn.textContent = '✓ Copied!';
   btn.classList.add('done');
-  setTimeout(() => { btn.textContent = 'â§‰ Copy Tag'; btn.classList.remove('done'); }, 1800);
+  setTimeout(() => { btn.textContent = '⧉ Copy Tag'; btn.classList.remove('done'); }, 1800);
 
-  toast.textContent = 'âœ“ ' + tag.toUpperCase() + ' COPIED';
+  toast.textContent = '✓ ' + tag.toUpperCase() + ' COPIED';
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 1800);
 }
